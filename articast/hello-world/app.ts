@@ -1,7 +1,7 @@
-import { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from 'aws-lambda';
-import { Metrics, MetricUnits } from '@aws-lambda-powertools/metrics';
-import { Logger } from '@aws-lambda-powertools/logger';
-import { Tracer } from '@aws-lambda-powertools/tracer';
+import { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from "aws-lambda";
+import { Metrics, MetricUnits } from "@aws-lambda-powertools/metrics";
+import { Logger } from "@aws-lambda-powertools/logger";
+import { Tracer } from "@aws-lambda-powertools/tracer";
 const metrics = new Metrics();
 const logger = new Logger();
 const tracer = new Tracer();
@@ -21,7 +21,7 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Contex
     let response: APIGatewayProxyResult;
 
     // Log the incoming event
-    logger.info('Lambda invocation event', { event });
+    logger.info("Lambda invocation event", { event });
 
     // Append awsRequestId to each log statement
     logger.appendKeys({
@@ -33,8 +33,8 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Contex
     if (!segment) {
         response = {
             statusCode: 500,
-            body: "Failed to get segment"
-        }
+            body: "Failed to get segment",
+        };
         return response;
     }
 
@@ -47,11 +47,11 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Contex
     tracer.addServiceNameAnnotation();
 
     // Add annotation for the awsRequestId
-    tracer.putAnnotation('awsRequestId', context.awsRequestId);
+    tracer.putAnnotation("awsRequestId", context.awsRequestId);
     // Capture cold start metrics
     metrics.captureColdStartMetric();
     // Create another subsegment & set it as active
-    const subsegment = handlerSegment.addNewSubsegment('### MySubSegment');
+    const subsegment = handlerSegment.addNewSubsegment("### MySubSegment");
     tracer.setSegment(subsegment);
 
     try {
@@ -59,7 +59,7 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Contex
         response = {
             statusCode: 200,
             body: JSON.stringify({
-                message: 'hello world',
+                message: "hello world",
             }),
         };
         logger.info(`Successful response from API enpoint: ${event.path}`, response.body);
@@ -68,7 +68,7 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Contex
         response = {
             statusCode: 500,
             body: JSON.stringify({
-                message: 'some error happened',
+                message: "some error happened",
             }),
         };
         tracer.addErrorAsMetadata(err as Error);
@@ -85,5 +85,4 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Contex
     }
 
     return response;
-
 };
