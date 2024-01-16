@@ -1,0 +1,8 @@
+{
+    "editor.tabSize": 2,
+    "[typescript]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true // https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint#settings-options
+        }
+    }
+}
