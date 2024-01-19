@@ -9,3 +9,19 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model BlogFeed {
+  id    String     @id
+  url String  @unique
+  title  String
+  posts BlogFeedItem[]
+
+  @@map("blog_feed")
+}
+
+model BlogFeedItem {
+  id       String     @id
+  blogFeed     BlogFeed    @relation(fields: [blogFeedId], references: [id], onDelete: Cascade)
+  blogFeedId   String   @map("label_id")
+  @@map("blog_feed_item")
+}

@@ -4,5 +4,8 @@
         "editor.codeActionsOnSave": {
             "source.fixAll.eslint": true // https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint#settings-options
         }
+    },
+    "[prisma]": {
+        "editor.defaultFormatter": "Prisma.prisma"
     }
 }
