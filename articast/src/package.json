@@ -10,6 +10,7 @@
     "@aws-lambda-powertools/logger": "^1.5.1",
     "@aws-lambda-powertools/metrics": "^1.5.1",
     "@aws-lambda-powertools/tracer": "^1.5.1",
+    "@prisma/client": "^5.8.1",
     "esbuild": "^0.17.6"
   },
   "scripts": {

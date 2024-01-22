@@ -11,17 +11,29 @@ datasource db {
 }
 
 model BlogFeed {
-  id    String     @id
-  url String  @unique
-  title  String
-  posts BlogFeedItem[]
+  url           String          @id
+  title         String
+  ArticleSource ArticleSource[]
 
-  @@map("blog_feed")
+  @@map("blog_feeds")
 }
 
-model BlogFeedItem {
-  id       String     @id
-  blogFeed     BlogFeed    @relation(fields: [blogFeedId], references: [id], onDelete: Cascade)
-  blogFeedId   String   @map("label_id")
-  @@map("blog_feed_item")
+model Article {
+  url           String          @id
+  title         String
+  updatedAt     DateTime        @map("updated_at")
+  status        String
+  ArticleSource ArticleSource[]
+
+  @@map("articles")
+}
+
+model ArticleSource {
+  blogFeed    BlogFeed @relation(fields: [blogFeedUrl], references: [url])
+  blogFeedUrl String   @map("blog_feed_url")
+  article     Article  @relation(fields: [articleUrl], references: [url])
+  articleUrl  String   @map("article_url")
+
+  @@id([blogFeedUrl, articleUrl])
+  @@map("article_sources")
 }

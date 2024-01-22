@@ -2,13 +2,12 @@
 erDiagram
 
 BlogFeed {
-	string id
 	string url
 	string title
 }
 BlogFeedItem {
-	string id
-	string blog_feed_id(R)
+	string url
+	string blog_feed_url(R)
 }
 Article {
 	string url
@@ -22,8 +21,7 @@ ArticleCrawling {
 	datetime crawled_at
 }
 ArticleSource {
-	string blog_feed_id(R)
-	string blog_atom_entry_id(R)
+	string blog_feed_url(R)
 	string article_url(R)
 }
 EpisodeAudio {
@@ -62,7 +60,6 @@ PodcastFeedItem {
 
 BlogFeed ||--o{ BlogFeedItem: "streams"
 BlogFeed ||--o| ArticleSource: "source"
-BlogFeedItem ||--|| ArticleSource: "source"
 ArticleSource ||--|| Article: "source"
 Article ||--o| ArticleCrawling: "crawling"
 EpisodeAudio ||--|| EpisodeAudioOrigin: "origin"
