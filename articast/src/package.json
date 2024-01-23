@@ -20,6 +20,7 @@
     "test": "npm run compile && npm run unit"
   },
   "devDependencies": {
+    "@quramy/jest-prisma": "^1.7.3",
     "@types/aws-lambda": "^8.10.109",
     "@types/jest": "^29.4.0",
     "@types/node": "^20.5.7",

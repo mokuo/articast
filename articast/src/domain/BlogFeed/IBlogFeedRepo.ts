@@ -1,5 +1,6 @@
 import BlogFeed from "./BlogFeed";
+import { PrismaClient } from "@prisma/client";
 
 export default interface IBlogFeedRepo {
-  insertAll(blogFeeds: BlogFeed[]): Promise<void>;
+  insertAll(prismaClient: PrismaClient, blogFeeds: BlogFeed[]): Promise<void>;
 }

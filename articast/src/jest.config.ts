@@ -11,5 +11,7 @@ export default {
   collectCoverage: true,
   coverageDirectory: "coverage",
   coverageProvider: "v8",
-  testMatch: ["**/tests/unit/*.test.ts"],
+  testMatch: ["**/tests/**/*.test.ts"],
+  // ref: https://github.com/Quramy/jest-prisma
+  testEnvironment: "@quramy/jest-prisma/environment",
 };
