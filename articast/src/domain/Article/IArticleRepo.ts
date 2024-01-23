@@ -1,5 +1,7 @@
+import { PrismaClient } from "@prisma/client";
+
 import Article from "./Article";
 
-interface IArticleRepo {
-  insertAll(articles: Article[]): Promise<void>;
+export default interface IArticleRepo {
+  bulkInsertOrSkip(prismaClient: PrismaClient, articles: Article[]): Promise<void>;
 }

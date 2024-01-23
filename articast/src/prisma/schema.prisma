@@ -11,19 +11,19 @@ datasource db {
 }
 
 model BlogFeed {
-  url           String          @id
-  title         String
-  ArticleSource ArticleSource[]
+  url            String          @id
+  title          String
+  articleSources ArticleSource[]
 
   @@map("blog_feeds")
 }
 
 model Article {
-  url           String          @id
+  url           String         @id
   title         String
-  updatedAt     DateTime        @map("updated_at")
+  updatedAt     DateTime       @map("updated_at")
   status        String
-  ArticleSource ArticleSource[]
+  articleSource ArticleSource?
 
   @@map("articles")
 }
@@ -32,7 +32,7 @@ model ArticleSource {
   blogFeed    BlogFeed @relation(fields: [blogFeedUrl], references: [url])
   blogFeedUrl String   @map("blog_feed_url")
   article     Article  @relation(fields: [articleUrl], references: [url])
-  articleUrl  String   @map("article_url")
+  articleUrl  String   @unique @map("article_url")
 
   @@id([blogFeedUrl, articleUrl])
   @@map("article_sources")

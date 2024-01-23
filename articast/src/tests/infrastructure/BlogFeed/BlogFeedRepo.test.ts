@@ -1,5 +1,5 @@
-import BlogFeedRepo from "../../../infrastructure/BlogFeed/BlogFeedRepo";
 import { publickeyFeed } from "../../../domain/BlogFeed/BlogFeed";
+import BlogFeedRepo from "../../../infrastructure/BlogFeed/BlogFeedRepo";
 
 describe("BlogFeedRepo", () => {
   describe("#insertAll", () => {
@@ -7,11 +7,12 @@ describe("BlogFeedRepo", () => {
 
     it("inserts all blog feeds", async () => {
       const blogFeedRepo = new BlogFeedRepo();
-      await blogFeedRepo.insertAll(prismaClient, [publickeyFeed]);
+      await blogFeedRepo.bulkInsert(prismaClient, [publickeyFeed]);
       const blogFeeds = await prismaClient.blogFeed.findMany();
 
       expect(blogFeeds.length).toBe(1);
       expect(blogFeeds[0].url).toBe(publickeyFeed.url);
+      expect(blogFeeds[0].title).toBe(publickeyFeed.title);
     });
   });
 });
