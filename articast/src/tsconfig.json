@@ -13,5 +13,9 @@
     // ref: https://github.com/Quramy/jest-prisma
     "types": ["@types/jest", "@quramy/jest-prisma"],
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  // ref: https://github.com/TypeStrong/ts-node?tab=readme-ov-file#native-ecmascript-modules
+  "ts-node": {
+    "esm": true
+  }
 }

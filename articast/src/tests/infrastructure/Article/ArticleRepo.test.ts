@@ -17,6 +17,7 @@ describe("ArticleRepo", () => {
         url: "https://example.com/1",
         title: "title1",
         blogFeedUrl: publickeyFeed.url,
+        publishedAt: new Date("2020-01-01T00:00:00Z"),
       });
       await articleRepo.bulkInsertOrSkip(prismaClient, [article1]);
 
@@ -25,6 +26,7 @@ describe("ArticleRepo", () => {
         url: "https://example.com/2",
         title: "title2",
         blogFeedUrl: publickeyFeed.url,
+        publishedAt: new Date("2020-01-02T00:00:00Z"),
       });
       await articleRepo.bulkInsertOrSkip(prismaClient, [article2]);
 

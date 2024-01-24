@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Publickey</title>
+    <link rel="alternate" type="text/html" href="https://www.publickey1.jp/" />
+    <link rel="self" type="application/atom+xml" href="https://www.publickey1.jp/atom.xml" />
+    <id>tag:www.publickey1.jp,2011-12-29://2</id>
+    <updated>2024-01-23T15:59:00Z</updated>
+    
+    <generator uri="http://www.sixapart.com/movabletype/">Movable Type Pro 7.9.1</generator>
+
+<entry>
+    <title>ソフトウェアに関わる人が知っておくといいかもしれない法則10個</title>
+    <link rel="alternate" type="text/html" href="https://www.publickey1.jp/blog/24/10_13.html" />
+    <id>tag:www.publickey1.jp,2024://2.7574</id>
+
+    <published>2024-01-23T15:44:43Z</published>
+    <updated>2024-01-23T15:59:00Z</updated>
+
+    <summary>「チームトポロジー」や「エンジニアリングマネージャーのしごと」「スクラム実践者が知るべき97のこと」の著者や翻訳者などで知られる吉羽龍太郎氏が、「ソフトウェアに関わる人が知っておくといいかもしれない法則10個（勝手セレクション）」という興味...</summary>
+    <author>
+        <name>jniino</name>
+        
+    </author>
+    
+        <category term="DevOps" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="アジャイル開発" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="働き方" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="ja" xml:base="https://www.publickey1.jp/">
+
+「チームトポロジー」や「エンジニアリングマネージャーのしごと」「スクラム実践者が知るべき97のこと」の著者や翻訳者などで知られる吉羽龍太郎氏が、「ソフトウェアに関わる人が知っておくといいかもしれない法則10個（勝手セレクション）」という興味深いポストをX（旧Twitter）で公開しています。 ソフトウェアに関わる人が知っておくといいかもしれない法則10個（勝手セレクション）コンウェイの法則パレートの法則グッドハートの法則パーキンソンの法則ブルックスの法則リトルの法則ピーターの……
+
+    </content>
+</entry>
+
+<entry>
+    <title>Red Hat、開発者向けポータルサイト構築ツール「Red Hat Developer Hub」正式リリース。オープンソースのBackspaceがベース</title>
+    <link rel="alternate" type="text/html" href="https://www.publickey1.jp/blog/24/red_hatred_hat_developer_hubbackspace.html" />
+    <id>tag:www.publickey1.jp,2024://2.7573</id>
+
+    <published>2024-01-23T15:39:00Z</published>
+    <updated>2024-01-23T15:44:38Z</updated>
+
+    <summary>Red Hatは、開発者の生産性向上を実現するためのポータルサイト構築ツール「Red hat Devloper Hub」の正式リリースを発表しました。 @RedHat #Developer Hub is now generally avai...</summary>
+    <author>
+        <name>jniino</name>
+        
+    </author>
+    
+        <category term="CI/CD" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="DevOps" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="開発ツール" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="redhat" label="Red Hat" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="https://www.publickey1.jp/">
+
+Red Hatは、開発者の生産性向上を実現するためのポータルサイト構築ツール「Red hat Devloper Hub」の正式リリースを発表しました。 @RedHat #Developer Hub is now generally available. Explore the core concepts to ensure you&#39;re well-equipped to use #RHDH to leverage the power of #Backstage in ……
+
+    </content>
+</entry>
+
+<entry>
+    <title>Oracle Cloudが生成AIサービスを提供開始、Llma 2とCohereが利用可能</title>
+    <link rel="alternate" type="text/html" href="https://www.publickey1.jp/blog/24/oracle_cloudaillma_2cohere.html" />
+    <id>tag:www.publickey1.jp,2024://2.7572</id>
+
+    <published>2024-01-23T15:37:26Z</published>
+    <updated>2024-01-23T15:38:56Z</updated>
+
+    <summary>オラクルはOracle Cloudで生成AIのマネージドサービスを提供すると発表しました。API経由で生成AIの機能を呼び出して利用することが可能です。 提供される生成AIのモデルはMetaの「Llma 2」と、オラクルが投資もしている生成...</summary>
+    <author>
+        <name>jniino</name>
+        
+    </author>
+    
+        <category term="クラウド" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="機械学習・AI" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="oracle" label="Oracle" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="oraclecloud" label="Oracle Cloud" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="https://www.publickey1.jp/">
+
+オラクルはOracle Cloudで生成AIのマネージドサービスを提供すると発表しました。API経由で生成AIの機能を呼び出して利用することが可能です。 提供される生成AIのモデルはMetaの「Llma 2」と、オラクルが投資もしている生成AI関連のスタートアップCohereが提供する「Cohere」の2種類です。 利用者がデータを用いてモデルをカスタマイズすることもできます。 テキスト生成機能による新製品の宣伝文句の生成やマーケティングメールの生成、テキストから特定のデータ……
+
+    </content>
+</entry>
+
+<entry>
+    <title>Ruby on Railsはどのように生まれ、発展してきたのか［後編］。作者DHH氏やコアチームが語る動画「Ruby on Rails: The Documentary」が公開</title>
+    <link rel="alternate" type="text/html" href="https://www.publickey1.jp/blog/24/ruby_on_railsdhhruby_on_rails_the_documentary_1.html" />
+    <id>tag:www.publickey1.jp,2024://2.7571</id>
+
+    <published>2024-01-22T15:54:47Z</published>
+    <updated>2024-01-23T02:48:47Z</updated>
+
+    <summary>最も有名なWebアプリケーションフレームワークの1つである「Ruby on Rails」は、もともと37signals社が社内向けに開発したフレームワークでした。 現在ではGitHubやShopifyなど大規模なWebサービスを支えるRub...</summary>
+    <author>
+        <name>jniino</name>
+        
+    </author>
+    
+        <category term="プログラミング言語" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="ruby" label="Ruby" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="https://www.publickey1.jp/">
+
+最も有名なWebアプリケーションフレームワークの1つである「Ruby on Rails」は、もともと37signals社が社内向けに開発したフレームワークでした。 現在ではGitHubやShopifyなど大規模なWebサービスを支えるRuby on Railsも、登場初期には「スケールしない」という批判にさらされ、また競合となるフレームワークが登場するなどの経緯を経ています。 こうしたRuby on Railsのこれまでを、作者であるDavid Heinemeier Hans……
+
+    </content>
+</entry>
+
+<entry>
+    <title>Ruby on Railsはどのように生まれ、発展してきたのか［前編］。作者DHH氏やコアチームが語る動画「Ruby on Rails: The Documentary」が公開</title>
+    <link rel="alternate" type="text/html" href="https://www.publickey1.jp/blog/24/ruby_on_railsdhhruby_on_rails_the_documentary.html" />
+    <id>tag:www.publickey1.jp,2024://2.7570</id>
+
+    <published>2024-01-22T15:47:06Z</published>
+    <updated>2024-01-22T16:00:28Z</updated>
+
+    <summary>最も有名なWebアプリケーションフレームワークの1つである「Ruby on Rails」は、もともと37signals社が社内向けに開発したフレームワークでした。 現在ではGitHubやShopifyなど大規模なWebサービスを支えるRub...</summary>
+    <author>
+        <name>jniino</name>
+        
+    </author>
+    
+        <category term="プログラミング言語" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="ruby" label="Ruby" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="https://www.publickey1.jp/">
+
+最も有名なWebアプリケーションフレームワークの1つである「Ruby on Rails」は、もともと37signals社が社内向けに開発したフレームワークでした。 現在ではGitHubやShopifyなど大規模なWebサービスを支えるRuby on Railsも、登場初期には「スケールしない」という批判にさらされ、また競合となるフレームワークが登場するなどの経緯を経ています。 こうしたRuby on Railsのこれまでを、作者であるDavid Heinemeier Hans……
+
+    </content>
+</entry>
+
+<entry>
+    <title>ITマニア向けの掲示板「スラド」が1月末での終了を発表。23年の歴史に幕</title>
+    <link rel="alternate" type="text/html" href="https://www.publickey1.jp/blog/24/it1.html" />
+    <id>tag:www.publickey1.jp,2024://2.7569</id>
+
+    <published>2024-01-22T04:32:50Z</published>
+    <updated>2024-01-22T07:21:18Z</updated>
+
+    <summary>ITマニア向けの掲示板「スラド」が1月末で終了となると発表されました。 2001年5月に「スラッシュドットジャパン」としてオープンし、その後「スラド」に名称を変更して運営を続けてきた老舗の掲示板が、23年の歴史に幕を下ろすことになります。 ...</summary>
+    <author>
+        <name>jniino</name>
+        
+    </author>
+    
+        <category term="業界動向" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="ja" xml:base="https://www.publickey1.jp/">
+
+ITマニア向けの掲示板「スラド」が1月末で終了となると発表されました。 2001年5月に「スラッシュドットジャパン」としてオープンし、その後「スラド」に名称を変更して運営を続けてきた老舗の掲示板が、23年の歴史に幕を下ろすことになります。 （16:20追記）スラドの終了だけでなく、SourceForge.netとして始まったオープンソースソフトウェアのホスティングサービス「OSDN.net」も終了するとのことです。 スラドで公開された「スラド終了のお知らせ」 では、終了につい……
+
+    </content>
+</entry>
+
+<entry>
+    <title>止まらないWebサイトを構築せよ。名古屋市からの要請にWordPressとDocker Swarm、そしてTiDB Serverlessの組み合わせで対応［PR］</title>
+    <link rel="alternate" type="text/html" href="https://www.publickey1.jp/blog/24/webwordpressdocker_swarmtidb_serverlesspr.html" />
+    <id>tag:www.publickey1.jp,2024://2.7568</id>
+
+    <published>2024-01-21T15:26:08Z</published>
+    <updated>2024-01-21T15:27:57Z</updated>
+
+    <summary>政府や公共団体、地方自治体などが情報発信に用いるWebサイトは一般に、大きなトラフィックが発生するわけではないものの、市民が24時間365日いつでも参照できるように高い可用性が求められることが多くあります。 名古屋市によるWebサイトとして...</summary>
+    <author>
+        <name>jniino</name>
+        
+    </author>
+    
+        <category term="RDB" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="データベース" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="pr" label="PR" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="tidb" label="TiDB" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="https://www.publickey1.jp/">
+
+政府や公共団体、地方自治体などが情報発信に用いるWebサイトは一般に、大きなトラフィックが発生するわけではないものの、市民が24時間365日いつでも参照できるように高い可用性が求められることが多くあります。 名古屋市によるWebサイトとして、さまざまな悩みの相談窓口となる「こころの絆創膏」、悩んでいる人に気づき声をかけられる人になるための「ゲートキーバー研修」、食の情報を提供する「なごや食育ひろば」などのWebサイトも、そうした高い可用性が求められていました。 こころの絆創膏……
+
+    </content>
+</entry>
+
+<entry>
+    <title>Rust製ブラウザエンジンの「Servo」がElectron代替を目指す「Tauri」への組み込みに対応、プロトタイプとして実装</title>
+    <link rel="alternate" type="text/html" href="https://www.publickey1.jp/blog/24/rustservoelectrontauri.html" />
+    <id>tag:www.publickey1.jp,2024://2.7567</id>
+
+    <published>2024-01-21T15:21:42Z</published>
+    <updated>2024-01-21T15:25:46Z</updated>
+
+    <summary>Linux Foundation傘下でRust製のWebブラウザエンジンとして開発が進められている「Servo」は、Electron代替を目指すフレームワーク「Tauri」への組み込みサポートを、プロトタイプとして実装したことを明らかにしま...</summary>
+    <author>
+        <name>jniino</name>
+        
+    </author>
+    
+        <category term="HTML/CSS" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="JavaScript" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Web技術" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="プログラミング言語" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="rust" label="Rust" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="tauri" label="Tauri" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="https://www.publickey1.jp/">
+
+Linux Foundation傘下でRust製のWebブラウザエンジンとして開発が進められている「Servo」は、Electron代替を目指すフレームワーク「Tauri」への組み込みサポートを、プロトタイプとして実装したことを明らかにしました。 Servo can now be used in an experimental build of WRY, the webview library behind Tauri!More on offscreen rendering,……
+
+    </content>
+</entry>
+
+<entry>
+    <title>Android版のChrome 121、高速なグラフィクス描画やGPUプログラミングを可能にする「WebGPU」が標準で利用可能に</title>
+    <link rel="alternate" type="text/html" href="https://www.publickey1.jp/blog/24/androidchrome_121gpuwebgpu.html" />
+    <id>tag:www.publickey1.jp,2024://2.7566</id>
+
+    <published>2024-01-21T15:17:35Z</published>
+    <updated>2024-01-21T15:21:02Z</updated>
+
+    <summary>Googleは1月17日付けでリリースしたChrome 121のAndroid版で、QualcommとARMのGPUを搭載したデバイスではWebGPUがデフォルトで有効になったことを明らかにしました。 下記はGoogle Chromeエバン...</summary>
+    <author>
+        <name>jniino</name>
+        
+    </author>
+    
+        <category term="JavaScript" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Web技術" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Web標準" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="chrome" label="Chrome" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="google" label="Google" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="webブラウザ" label="Webブラウザ" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="https://www.publickey1.jp/">
+
+Googleは1月17日付けでリリースしたChrome 121のAndroid版で、QualcommとARMのGPUを搭載したデバイスではWebGPUがデフォルトで有効になったことを明らかにしました。 下記はGoogle ChromeエバンジェリストFrançois Beaufort氏のポストです。 Chrome 121 is packed with WebGPU features: Now on Android!Use of DXC for shader compilati……
+
+    </content>
+</entry>
+
+<entry>
+    <title>GitHub、パブリックリポジトリのユーザーに4vCPU/16GBメモリ/150GBストレージのホステッドランナーを無償提供、従来よりも2倍のスペックに強化</title>
+    <link rel="alternate" type="text/html" href="https://www.publickey1.jp/blog/24/github4vcpu16gb150gb2.html" />
+    <id>tag:www.publickey1.jp,2024://2.7563</id>
+
+    <published>2024-01-18T15:13:52Z</published>
+    <updated>2024-01-18T15:18:39Z</updated>
+
+    <summary>GitHubは、コードのビルドやテスト環境などで使えるホステッドランナーを、パブリックリポジトリで開発をしているオープンソースの開発者向けに無償で提供しています。 今回、その無償のホステッドランナーが2倍のスペックに強化されたことが発表され...</summary>
+    <author>
+        <name>jniino</name>
+        
+    </author>
+    
+        <category term="DevOps" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="クラウド" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="開発ツール" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="github" label="GitHub" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="microsoft" label="Microsoft" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="https://www.publickey1.jp/">
+
+GitHubは、コードのビルドやテスト環境などで使えるホステッドランナーを、パブリックリポジトリで開発をしているオープンソースの開発者向けに無償で提供しています。 今回、その無償のホステッドランナーが2倍のスペックに強化されたことが発表されました。 GitHub Hosted Runners for public repositories are now DOUBLE the size! Run your CI/CD Actions workflows with a 20% ……
+
+    </content>
+</entry>
+
+<entry>
+    <title>HTTPが全てを飲み込む（後編）～アップロードのレジューム機能標準化など開発中の新機能</title>
+    <link rel="alternate" type="text/html" href="https://www.publickey1.jp/blog/24/http.html" />
+    <id>tag:www.publickey1.jp,2024://2.7562</id>
+
+    <published>2024-01-17T15:03:31Z</published>
+    <updated>2024-01-21T15:32:36Z</updated>
+
+    <summary>Webを構成する重要な要素の1つであるHTTPは、その最新仕様で2層構造となり、バージョンに関係なく使えるSemanticsと、特徴の異なる通信仕様を定めたHTTP/1.1、2、3に分割されました。 さらに現在では、HTTPの上にあらためて...</summary>
+    <author>
+        <name>jniino</name>
+        
+    </author>
+    
+        <category term="HTTP" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="QUIC" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Web標準" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="ネットワーク" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="ja" xml:base="https://www.publickey1.jp/">
+
+Webを構成する重要な要素の1つであるHTTPは、その最新仕様で2層構造となり、バージョンに関係なく使えるSemanticsと、特徴の異なる通信仕様を定めたHTTP/1.1、2、3に分割されました。 さらに現在では、HTTPの上にあらためてUDPやIP、イーサネットなどのプロトコルを実装する提案が行われており、まさにHTTPは通信の全てを飲み込む勢いで進化しつつあります。 こうしたHTTPの最新動向の解説が、大手CDNベンダでエッジクラウドなども展開するFastlyが2023……
+
+    </content>
+</entry>
+
+<entry>
+    <title>HTTPが全てを飲み込む（中編）～HTTPの上にIPやイーサネットが実装されて便利になること</title>
+    <link rel="alternate" type="text/html" href="https://www.publickey1.jp/blog/24/httphttpip.html" />
+    <id>tag:www.publickey1.jp,2024://2.7561</id>
+
+    <published>2024-01-17T15:02:38Z</published>
+    <updated>2024-01-21T15:32:29Z</updated>
+
+    <summary>Webを構成する重要な要素の1つであるHTTPは、その最新仕様で2層構造となり、バージョンに関係なく使えるSemanticsと、特徴の異なる通信仕様を定めたHTTP/1.1、2、3に分割されました。 さらに現在では、HTTPの上にあらためて...</summary>
+    <author>
+        <name>jniino</name>
+        
+    </author>
+    
+        <category term="HTTP" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="QUIC" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Web標準" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="ネットワーク" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="ja" xml:base="https://www.publickey1.jp/">
+
+Webを構成する重要な要素の1つであるHTTPは、その最新仕様で2層構造となり、バージョンに関係なく使えるSemanticsと、特徴の異なる通信仕様を定めたHTTP/1.1、2、3に分割されました。 さらに現在では、HTTPの上にあらためてUDPやIP、イーサネットなどのプロトコルを実装する提案が行われており、まさにHTTPは通信の全てを飲み込む勢いで進化しつつあります。 こうしたHTTPの最新動向の解説が、大手CDNベンダでエッジクラウドなども展開するFastlyが2023……
+
+    </content>
+</entry>
+
+<entry>
+    <title>HTTPが全てを飲み込む（前編）～HTTPの2層構造と、HTTP Semanticsとは何か？</title>
+    <link rel="alternate" type="text/html" href="https://www.publickey1.jp/blog/24/httphttp2http_semantics.html" />
+    <id>tag:www.publickey1.jp,2024://2.7560</id>
+
+    <published>2024-01-17T15:01:25Z</published>
+    <updated>2024-01-21T15:31:30Z</updated>
+
+    <summary>Webを構成する重要な要素の1つであるHTTPは、その最新仕様で2層構造となり、バージョンに関係なく使えるSemanticsと、特徴の異なる通信仕様を定めたHTTP/1.1、2、3に分割されました。 さらに現在では、HTTPの上にあらためて...</summary>
+    <author>
+        <name>jniino</name>
+        
+    </author>
+    
+        <category term="HTTP" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="QUIC" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Web標準" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="ネットワーク" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="ja" xml:base="https://www.publickey1.jp/">
+
+Webを構成する重要な要素の1つであるHTTPは、その最新仕様で2層構造となり、バージョンに関係なく使えるSemanticsと、特徴の異なる通信仕様を定めたHTTP/1.1、2、3に分割されました。 さらに現在では、HTTPの上にあらためてUDPやIP、イーサネットなどのプロトコルを実装する提案が行われており、まさにHTTPは通信の全てを飲み込む勢いで進化しつつあります。 こうしたHTTPの最新動向の解説が、大手CDNベンダでエッジクラウドなども展開するFastlyが2023……
+
+    </content>
+</entry>
+
+<entry>
+    <title>ITエンジニアが投票した「ITエンジニア本大賞2024」発表。単体テストの考え方／プログラマー脳／ プロジェクトマネジメントの基本が全部わかる、など</title>
+    <link rel="alternate" type="text/html" href="https://www.publickey1.jp/blog/24/itit2024.html" />
+    <id>tag:www.publickey1.jp,2024://2.7559</id>
+
+    <published>2024-01-16T16:36:38Z</published>
+    <updated>2024-01-16T17:09:02Z</updated>
+
+    <summary>ITエンジニアが投票によって技術書やビジネス書を選ぶ「ITエンジニア本大賞 2024」の結果が発表されました。 「ITエンジニア本大賞」は、仕事の役に立った本、初学者におすすめの本、ずっと手元に置いておきたい本など、おすすめの本をITエンジ...</summary>
+    <author>
+        <name>jniino</name>
+        
+    </author>
+    
+        <category term="業界動向" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="書評" label="書評" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="https://www.publickey1.jp/">
+
+ITエンジニアが投票によって技術書やビジネス書を選ぶ「ITエンジニア本大賞 2024」の結果が発表されました。 「ITエンジニア本大賞」は、仕事の役に立った本、初学者におすすめの本、ずっと手元に置いておきたい本など、おすすめの本をITエンジニアがWeb投票で選ぶイベントです。 主催は翔泳社ですが、対象となる書籍は出版社を問わず技術書、ビジネス書全般となっています。刊行年も関係なく、これまで大賞に選出された書籍を除き、この1年を振り返っておすすめしたい書籍が対象となります。 今……
+
+    </content>
+</entry>
+
+<entry>
+    <title>静的サイトに特化した全文検索ライブラリ「Pagefind」、さくらのレンタルサーバで動かしてみた</title>
+    <link rel="alternate" type="text/html" href="https://www.publickey1.jp/blog/24/pagefind.html" />
+    <id>tag:www.publickey1.jp,2024://2.7558</id>
+
+    <published>2024-01-16T15:03:37Z</published>
+    <updated>2024-01-16T15:45:05Z</updated>
+
+    <summary>先日、静的サイトに特化した全文検索ライブラリとして「Pagefind」というソフトウェアがあることを、下記の記事が話題になったことで知りました。 参考：静的サイトに特化した検索ライブラリ Pagefind を試す | grip on min...</summary>
+    <author>
+        <name>jniino</name>
+        
+    </author>
+    
+        <category term="プログラミング言語" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="編集後記" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="rust" label="Rust" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="https://www.publickey1.jp/">
+
+先日、静的サイトに特化した全文検索ライブラリとして「Pagefind」というソフトウェアがあることを、下記の記事が話題になったことで知りました。 参考：静的サイトに特化した検索ライブラリ Pagefind を試す | grip on minds 実は、いまお読みのPublickeyはまさに、Movable TypeというCMSを用いて生成された静的なWebサイトです。現在、PublickeyではGoogleが提供している「Googleカスタム検索エンジン」を全文検索エンジンと……
+
+    </content>
+</entry>
+
+</feed>
