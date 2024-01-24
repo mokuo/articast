@@ -11,7 +11,7 @@ export default class ArticleRepo implements IArticleRepo {
           data: {
             url: article.url,
             title: article.title,
-            updatedAt: article.publishedAt,
+            publishedAt: article.publishedAt,
             status: article.status,
             articleSource: {
               create: {

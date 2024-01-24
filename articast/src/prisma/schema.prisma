@@ -21,7 +21,7 @@ model BlogFeed {
 model Article {
   url           String         @id
   title         String
-  updatedAt     DateTime       @map("updated_at")
+  publishedAt   DateTime       @map("published_at")
   status        String
   articleSource ArticleSource?
 
