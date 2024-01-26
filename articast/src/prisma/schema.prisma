@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model BlogFeed {
+  url            String          @id
+  title          String
+  articleSources ArticleSource[]
+
+  @@map("blog_feeds")
+}
+
+model Article {
+  url           String         @id
+  title         String
+  publishedAt   DateTime       @map("published_at")
+  status        String
+  articleSource ArticleSource?
+
+  @@map("articles")
+}
+
+model ArticleSource {
+  blogFeed    BlogFeed @relation(fields: [blogFeedUrl], references: [url])
+  blogFeedUrl String   @map("blog_feed_url")
+  article     Article  @relation(fields: [articleUrl], references: [url])
+  articleUrl  String   @unique @map("article_url")
+
+  @@id([blogFeedUrl, articleUrl])
+  @@map("article_sources")
+}

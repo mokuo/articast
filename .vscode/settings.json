@@ -1,0 +1,12 @@
+{
+    "editor.tabSize": 2,
+    "[typescript][javascript]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": "explicit"
+        }
+    },
+    "[prisma]": {
+        "editor.defaultFormatter": "Prisma.prisma",
+        "editor.formatOnSave": true,
+    }
+}
