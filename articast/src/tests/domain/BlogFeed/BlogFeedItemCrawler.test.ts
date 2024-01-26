@@ -7,7 +7,7 @@ import BlogFeedItemCrawler from "../../../domain/BlogFeed/BlogFeedItemCrawler";
 import expectedArticles from "../../__fixtures__/articles_publickey_20230124";
 
 describe("BlogFeedItemCrawler", () => {
-  describe("#crawl", () => {
+  describe("#getArticles", () => {
     it("returns articles", async () => {
       // setup
       const blogFeedText = await fs.readFile(path.resolve("tests/__fixtures__/rss/publickey_20230124.xml"), "utf-8");

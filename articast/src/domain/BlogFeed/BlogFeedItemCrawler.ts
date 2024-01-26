@@ -1,7 +1,10 @@
 import Parser from "rss-parser";
+import "reflect-metadata";
+import { injectable } from "tsyringe";
 
 import Article from "../Article/Article";
 
+@injectable()
 export default class BlogFeedItemCrawler {
   private parser: Parser;
 

@@ -1,13 +1,16 @@
-import { PrismaClient } from "@prisma/client";
+import "reflect-metadata";
+import { injectable } from "tsyringe";
 
 import Article from "../../domain/Article/Article";
 import IArticleRepo from "../../domain/Article/IArticleRepo";
+import { TransactionClient } from "../../prisma/utils";
 
+@injectable()
 export default class ArticleRepo implements IArticleRepo {
-  public async bulkInsertOrSkip(prismaClient: PrismaClient, articles: Article[]): Promise<void> {
+  public async bulkInsertOrSkip(transactionClient: TransactionClient, articles: Article[]): Promise<void> {
     await Promise.all(
       articles.map(async (article) => {
-        await prismaClient.article.create({
+        await transactionClient.article.create({
           data: {
             url: article.url,
             title: article.title,

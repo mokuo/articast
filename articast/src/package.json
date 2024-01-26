@@ -15,7 +15,9 @@
     "@aws-lambda-powertools/tracer": "^1.5.1",
     "@prisma/client": "^5.8.1",
     "esbuild": "^0.17.6",
-    "rss-parser": "^3.13.0"
+    "reflect-metadata": "^0.2.1",
+    "rss-parser": "^3.13.0",
+    "tsyringe": "^4.8.0"
   },
   "scripts": {
     "unit": "jest",

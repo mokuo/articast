@@ -1,7 +1,7 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaTxClient } from "../../prisma/utils";
 
 import BlogFeed from "./BlogFeed";
 
 export default interface IBlogFeedRepo {
-  bulkInsert(prismaClient: PrismaClient, blogFeeds: BlogFeed[]): Promise<void>;
+  bulkInsert(prismaClient: PrismaTxClient, blogFeeds: BlogFeed[]): Promise<void>;
 }
