@@ -1,7 +1,3 @@
-import { promises as fs } from "fs";
-import path from "path";
-
-import nock from "nock";
 import "reflect-metadata";
 import { container } from "tsyringe";
 
@@ -9,22 +5,22 @@ import { publickeyFeed } from "../../../domain/BlogFeed/BlogFeed";
 import BlogFeedRepo from "../../../infrastructure/BlogFeed/BlogFeedRepo";
 import BlogFeedCrawler from "../../../usecase/BlogFeed/BlogFeedCrawler";
 import expectedArticles from "../../__fixtures__/articles_publickey_20230124";
+import { mockHttpRequest } from "../../__utils__/mockHttpRequest";
 
 describe("BlogFeedCrawler", () => {
   describe("#crawl", () => {
     const prismaClient = jestPrisma.client;
+    const url = "https://www.publickey1.jp/atom.xml";
 
     it("RSS フィードをクロールして、記事を保存する", async () => {
       // setup
       const blogFeedRepo = new BlogFeedRepo();
       await blogFeedRepo.bulkInsert(prismaClient, [publickeyFeed]);
-
-      const blogFeedText = await fs.readFile(path.resolve("tests/__fixtures__/rss/publickey_20230124.xml"), "utf-8");
-      nock("https://www.publickey1.jp").get("/atom.xml").reply(200, blogFeedText);
+      await mockHttpRequest(url, "tests/__fixtures__/rss/publickey_20230124.xml");
 
       // test
       const crawler = container.resolve(BlogFeedCrawler);
-      await crawler.crawl(prismaClient, "https://www.publickey1.jp/atom.xml");
+      await crawler.crawl(prismaClient, url);
 
       const foundArticles = await prismaClient.article.findMany();
 

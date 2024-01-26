@@ -14,6 +14,8 @@
     "@aws-lambda-powertools/metrics": "^1.5.1",
     "@aws-lambda-powertools/tracer": "^1.5.1",
     "@prisma/client": "^5.8.1",
+    "axios": "^1.6.7",
+    "cheerio": "^1.0.0-rc.12",
     "esbuild": "^0.17.6",
     "reflect-metadata": "^0.2.1",
     "rss-parser": "^3.13.0",

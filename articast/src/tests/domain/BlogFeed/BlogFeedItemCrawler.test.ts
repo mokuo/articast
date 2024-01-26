@@ -1,21 +1,18 @@
-import { promises as fs } from "fs";
-import path from "path";
-
-import nock from "nock";
-
 import BlogFeedItemCrawler from "../../../domain/BlogFeed/BlogFeedItemCrawler";
 import expectedArticles from "../../__fixtures__/articles_publickey_20230124";
+import { mockHttpRequest } from "../../__utils__/mockHttpRequest";
 
 describe("BlogFeedItemCrawler", () => {
   describe("#getArticles", () => {
+    const url = "https://www.publickey1.jp/atom.xml";
+
     it("returns articles", async () => {
       // setup
-      const blogFeedText = await fs.readFile(path.resolve("tests/__fixtures__/rss/publickey_20230124.xml"), "utf-8");
-      nock("https://www.publickey1.jp").get("/atom.xml").reply(200, blogFeedText);
+      await mockHttpRequest(url, "tests/__fixtures__/rss/publickey_20230124.xml");
 
       // test
       const crawler = new BlogFeedItemCrawler();
-      const articles = await crawler.getArticles("https://www.publickey1.jp/atom.xml");
+      const articles = await crawler.getArticles(url);
       expect(articles).toEqual(expectedArticles);
     });
   });

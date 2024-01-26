@@ -14,4 +14,8 @@ export default {
   testMatch: ["**/tests/**/*.test.ts"],
   // ref: https://github.com/Quramy/jest-prisma
   testEnvironment: "@quramy/jest-prisma/environment",
+  moduleNameMapper: {
+    // https://github.com/nock/nock?tab=readme-ov-file#axios
+    "^axios$": require.resolve("axios"),
+  },
 };
