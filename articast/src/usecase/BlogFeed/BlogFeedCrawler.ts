@@ -1,10 +1,10 @@
 import { PrismaClient } from "@prisma/client";
-import { autoInjectable } from "tsyringe";
+import { injectable } from "tsyringe";
 
 import BlogFeedItemCrawler from "../../domain/BlogFeed/BlogFeedItemCrawler";
 import ArticleRepo from "../../infrastructure/Article/ArticleRepo";
 
-@autoInjectable()
+@injectable()
 export default class BlogFeedCrawler {
   constructor(private itemCrawler: BlogFeedItemCrawler, private articleRepo: ArticleRepo) {}
 

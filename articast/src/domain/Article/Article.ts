@@ -1,4 +1,8 @@
-type ArticleStatus = "notCrawled" | "crawled" | "converted";
+import { z } from "zod";
+
+const ARTICLE_STATUS = ["uncrawled", "crawled", "converted"] as const;
+const ArticleStatusEnum = z.enum(ARTICLE_STATUS);
+export type ArticleStatus = z.infer<typeof ArticleStatusEnum>;
 
 export default class Article {
   public readonly url: string;
@@ -7,7 +11,27 @@ export default class Article {
   public readonly status: ArticleStatus;
   public readonly blogFeedUrl: string;
 
-  constructor({
+  private constructor({
+    url,
+    title,
+    publishedAt,
+    status,
+    blogFeedUrl,
+  }: {
+    url: string;
+    title: string;
+    publishedAt: Date;
+    status: ArticleStatus;
+    blogFeedUrl: string;
+  }) {
+    this.url = url;
+    this.title = title;
+    this.publishedAt = publishedAt;
+    this.status = status;
+    this.blogFeedUrl = blogFeedUrl;
+  }
+
+  static createNew({
     url,
     title,
     publishedAt,
@@ -18,10 +42,34 @@ export default class Article {
     publishedAt: Date;
     blogFeedUrl: string;
   }) {
-    this.url = url;
-    this.title = title;
-    this.publishedAt = publishedAt;
-    this.status = "notCrawled";
-    this.blogFeedUrl = blogFeedUrl;
+    return new Article({
+      url,
+      title,
+      publishedAt,
+      status: "uncrawled",
+      blogFeedUrl,
+    });
+  }
+
+  static reconstruct({
+    url,
+    title,
+    publishedAt,
+    status,
+    blogFeedUrl,
+  }: {
+    url: string;
+    title: string;
+    publishedAt: Date;
+    status: string;
+    blogFeedUrl: string;
+  }) {
+    return new Article({
+      url,
+      title,
+      publishedAt,
+      status: ArticleStatusEnum.parse(status),
+      blogFeedUrl,
+    });
   }
 }
