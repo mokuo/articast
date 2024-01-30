@@ -29,6 +29,13 @@ mysql> use <db_name>;
 mysql> show grants for '<db_name>'@'localhost'
 ```
 
+### LocalStack を起動する
+
+```zsh
+cd articast/localstack/
+docker-compose up
+```
+
 ## マイグレーションの実行方法
 
 ```

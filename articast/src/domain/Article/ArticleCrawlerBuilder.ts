@@ -1,10 +1,14 @@
+import "reflect-metadata";
+import { injectable } from "tsyringe";
+
 import PublickeyCrawler from "./crawlers/PublickeyCrawler";
 
 export interface IArticleCrawler {
   readonly blogFeedUrl: string;
-  crawl(url: string): Promise<string>;
+  getText(url: string): Promise<string>;
 }
 
+@injectable()
 export default class ArticleCrawlerBuilder {
   // NOTE: 新しいクローラーを実装したら、ここに追加する
   private crawlers: IArticleCrawler[] = [new PublickeyCrawler()];

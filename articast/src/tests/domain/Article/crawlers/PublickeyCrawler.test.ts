@@ -16,7 +16,7 @@ describe("PublickeyCrawler", () => {
       );
 
       // test
-      const text = await crawler.crawl(url);
+      const text = await crawler.getText(url);
       const expected = await readLocalFile(
         "tests/__fixtures__/html/www.publickey1.jp/blog/24/javascripttypescriptosbun_shelljavascriptbun.txt",
       );
