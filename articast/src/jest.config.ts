@@ -17,5 +17,8 @@ export default {
   moduleNameMapper: {
     // https://github.com/nock/nock?tab=readme-ov-file#axios
     "^axios$": require.resolve("axios"),
+    // ref: https://stackoverflow.com/questions/73203367/jest-syntaxerror-unexpected-token-export-with-uuid-library
+    uuid: require.resolve("uuid"), // eslint-disable-line node/no-extraneous-require
   },
+  setupFiles: ["dotenv/config"],
 };

@@ -19,14 +19,12 @@ npm install
 ### データベースを作成する
 
 - ref:
-    - https://www.prisma.io/dataguide/mysql/authentication-and-authorization/user-management-and-authentication
-    - https://www.prisma.io/dataguide/mysql/create-and-delete-databases-and-tables#how-do-you-create-a-new-database
+  - https://www.prisma.io/dataguide/mysql/authentication-and-authorization/user-management-and-authentication
+  - https://www.prisma.io/dataguide/mysql/create-and-delete-databases-and-tables#how-do-you-create-a-new-database
 
 ```
 mysql> show databases;
 mysql> CREATE DATABASE <db_name>;
-mysql> use <db_name>;
-mysql> show grants for '<db_name>'@'localhost'
 ```
 
 ### LocalStack を起動する
