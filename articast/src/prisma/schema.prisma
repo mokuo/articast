@@ -19,11 +19,12 @@ model BlogFeed {
 }
 
 model Article {
-  url           String         @id
-  title         String
-  publishedAt   DateTime       @map("published_at")
-  status        String
-  articleSource ArticleSource?
+  url             String           @id
+  title           String
+  publishedAt     DateTime         @map("published_at")
+  status          String
+  articleSource   ArticleSource?
+  articleCrawling ArticleCrawling?
 
   @@map("articles")
 }
@@ -36,4 +37,13 @@ model ArticleSource {
 
   @@id([blogFeedUrl, articleUrl])
   @@map("article_sources")
+}
+
+model ArticleCrawling {
+  article            Article  @relation(fields: [articleUrl], references: [url])
+  articleUrl         String   @id @map("article_url")
+  crawledContentPath String   @map("crawled_content_path")
+  crawledAt          DateTime @map("crawled_at")
+
+  @@map("article_crawlings")
 }

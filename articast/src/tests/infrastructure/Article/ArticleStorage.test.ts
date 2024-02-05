@@ -1,3 +1,4 @@
+import CrawledContentPath from "../../../domain/Article/CrawledContentPath";
 import ArticleStorage, { ARTICLES_BUCKET_NAME } from "../../../infrastructure/Article/ArticleStorage";
 import { deleteObject } from "../../__utils__/S3Commands";
 
@@ -10,11 +11,11 @@ describe("ArticleStorage", () => {
     });
 
     it("uploads text to S3", async () => {
-      const url = "https://example.com/article";
+      const path = CrawledContentPath.createNew("https://example.com/article");
       const text = "This is a text.";
 
-      await articleStorage.upload(url, text);
-      const downloadText = await articleStorage.download(url);
+      await articleStorage.upload(path, text);
+      const downloadText = await articleStorage.download(path);
 
       expect(text).toEqual(downloadText);
     });

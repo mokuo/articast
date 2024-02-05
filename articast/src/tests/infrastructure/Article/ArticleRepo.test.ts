@@ -1,4 +1,5 @@
 import Article from "../../../domain/Article/Article";
+import CrawledContentPath from "../../../domain/Article/CrawledContentPath";
 import { publickeyFeed } from "../../../domain/BlogFeed/BlogFeed";
 import ArticleRepo from "../../../infrastructure/Article/ArticleRepo";
 import BlogFeedRepo from "../../../infrastructure/BlogFeed/BlogFeedRepo";
@@ -101,6 +102,38 @@ describe("ArticleRepo", () => {
           status: "uncrawled",
         });
         expect(articles.length).toBe(1);
+      });
+    });
+  });
+
+  describe("#update", () => {
+    const prismaClient = jestPrisma.client;
+    const blogFeedRepo = new BlogFeedRepo();
+    const articleRepo = new ArticleRepo();
+
+    describe("ArticleCrawling が保存されていない時", () => {
+      it("ArticleCrawling を保存し、ステータスを更新する", async () => {
+        // setup
+        await blogFeedRepo.bulkInsert(prismaClient, [publickeyFeed]);
+
+        const article = Article.createNew({
+          url: "https://example.com/test",
+          title: "title",
+          blogFeedUrl: publickeyFeed.url,
+          publishedAt: new Date("2020-01-01T00:00:00Z"),
+        });
+        await articleRepo.bulkInsertOrSkip(prismaClient, [article]);
+
+        // test
+        const path = CrawledContentPath.createNew("https://example.com/test");
+        article.saveCrawledContentPath(path);
+        await articleRepo.update(prismaClient, article);
+
+        const articles = await articleRepo.findAll(prismaClient, {});
+        expect(articles.length).toEqual(1);
+        const updatedArticle = articles[0];
+        expect(updatedArticle.status).toEqual("crawled");
+        expect(updatedArticle.crawling!.crawledContentPath.toString()).toEqual("example.com/test");
       });
     });
   });
