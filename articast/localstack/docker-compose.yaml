@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  localstack:
+    container_name: "${LOCALSTACK_DOCKER_NAME:-localstack-articast}"
+    image: localstack/localstack
+    ports:
+      - "127.0.0.1:4566:4566" # LocalStack のデフォルトのエンドポイントポート
+      # - "4571:4571" # （オプション）LocalStack のエッジサービスのレガシーポート
+    environment:
+      - AWS_ACCESS_KEY_ID=dummy
+      - AWS_SECRET_ACCESS_KEY=dummy
+      - AWS_DEFAULT_REGION=ap-northeast-1
+      - SERVICES=s3  # 起動するサービスを指定
+      - DATA_DIR=/var/lib/localstack/data # データの永続化
+      - DEBUG=1
+    volumes:
+      - "./init/ready.d/init-aws.sh:/etc/localstack/init/ready.d/init-aws.sh"  # ready hook
+      - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack" # ホストとコンテナ間でデータを永続化
+      - "/var/run/docker.sock:/var/run/docker.sock" # Docker デーモンへのアクセス

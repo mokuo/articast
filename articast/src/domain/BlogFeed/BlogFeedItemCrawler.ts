@@ -15,7 +15,7 @@ export default class BlogFeedItemCrawler {
   async getArticles(blogFeedItemUrl: string): Promise<Article[]> {
     const feed = await this.parser.parseURL(blogFeedItemUrl);
     return feed.items.map((item) => {
-      return new Article({
+      return Article.createNew({
         url: item.link!,
         title: item.title || "",
         publishedAt: new Date(item.isoDate!),
