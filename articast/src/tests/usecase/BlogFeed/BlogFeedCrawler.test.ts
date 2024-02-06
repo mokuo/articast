@@ -9,11 +9,11 @@ import { mockHttpRequest } from "../../__utils__/mockHttpRequest";
 
 describe("BlogFeedCrawler", () => {
   describe("#crawl", () => {
-    const prismaClient = jestPrisma.client;
-    const url = "https://www.publickey1.jp/atom.xml";
-
     it("RSS フィードをクロールして、記事を保存する", async () => {
       // setup
+      const prismaClient = jestPrisma.client;
+      const url = "https://www.publickey1.jp/atom.xml";
+
       const blogFeedRepo = new BlogFeedRepo();
       await blogFeedRepo.bulkInsert(prismaClient, [publickeyFeed]);
       await mockHttpRequest(url, "tests/__fixtures__/rss/publickey_20230124.xml");

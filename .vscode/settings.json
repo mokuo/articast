@@ -10,6 +10,8 @@
         "editor.formatOnSave": true,
     },
     "cSpell.words": [
-        "uncrawled"
+        "uncrawled",
+        "articast",
+        "tsyringe"
     ]
 }

@@ -1,11 +1,11 @@
 import "reflect-metadata";
-import { PrismaClient } from "@prisma/client";
 import { injectable } from "tsyringe";
 
 import ArticleCrawlerBuilder from "../../domain/Article/ArticleCrawlerBuilder";
 import CrawledContentPath from "../../domain/Article/CrawledContentPath";
 import ArticleRepo from "../../infrastructure/Article/ArticleRepo";
 import ArticleStorage from "../../infrastructure/Article/ArticleStorage";
+import { PrismaTxClient } from "../../prisma/utils";
 import { chunk } from "../../utils/array-utils";
 
 @injectable()
@@ -16,7 +16,7 @@ export default class ArticleCrawler {
     private articleStorage: ArticleStorage,
   ) {}
 
-  async crawl(prismaClient: PrismaClient, blogFeedUrl: string) {
+  async crawl(prismaClient: PrismaTxClient, blogFeedUrl: string) {
     const articleCrawler = this.builder.getCrawler(blogFeedUrl);
 
     const articles = await this.articleRepo.findAll(prismaClient, { blogFeedUrl, status: "uncrawled" });
@@ -25,10 +25,11 @@ export default class ArticleCrawler {
       await Promise.all(
         arts.map(async (article) => {
           const text = await articleCrawler.getText(article.url);
-          // 第一引数に CrawledContentPath を渡したい
           const path = CrawledContentPath.createNew(article.url);
           await this.articleStorage.upload(path, text);
-          // ArticleCrawling を保存する
+
+          article.saveCrawledContentPath(path);
+          await this.articleRepo.update(prismaClient, article);
         }),
       );
     }
