@@ -97,14 +97,6 @@ export default class Article {
     });
   }
 
-  // updateStatus(nextStatus: ArticleStatus) {
-  //   if (transitions[this._status].includes(nextStatus)) {
-  //     this._status = nextStatus;
-  //   } else {
-  //     throw new Error(`status は ${this._status} => ${nextStatus} に変更できません。`);
-  //   }
-  // }
-
   saveCrawledContentPath(crawledContentPath: CrawledContentPath) {
     if (this._status !== "uncrawled") {
       throw new Error("クローリング済みの記事です");
