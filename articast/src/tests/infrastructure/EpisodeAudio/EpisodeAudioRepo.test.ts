@@ -21,7 +21,7 @@ describe("EpisodeAudioRepo", () => {
         blogFeedUrl: publickeyFeed.url,
         publishedAt: new Date("2020-01-01T00:00:00Z"),
       });
-      await articleRepo.bulkInsertOrSkip(prismaClient, [article]);
+      await articleRepo.bulkInsert(prismaClient, [article]);
 
       // test
       const episodeAudioRepo = new EpisodeAudioRepo();

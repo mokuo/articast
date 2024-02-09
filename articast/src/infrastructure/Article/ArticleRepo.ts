@@ -9,7 +9,7 @@ import { chunk } from "../../utils/array-utils";
 
 @injectable()
 export default class ArticleRepo implements IArticleRepo {
-  async bulkInsertOrSkip(transactionClient: TransactionClient, articles: Article[]): Promise<void> {
+  async bulkInsert(transactionClient: TransactionClient, articles: Article[]): Promise<void> {
     const chunkedArticles = chunk(articles, 5);
     for (const arts of chunkedArticles) {
       await Promise.all(

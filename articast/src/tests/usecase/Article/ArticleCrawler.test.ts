@@ -31,7 +31,7 @@ describe("Article Crawler", () => {
         publishedAt: new Date("2020-01-01T00:00:00Z"),
       });
       const articleRepo = container.resolve(ArticleRepo);
-      await articleRepo.bulkInsertOrSkip(prismaClient, [article1, article2]);
+      await articleRepo.bulkInsert(prismaClient, [article1, article2]);
 
       await mockHttpRequest(
         "https://example.com/1",

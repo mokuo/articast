@@ -93,10 +93,18 @@ export default class Article {
 
   saveCrawledContentPath(crawledContentPath: CrawledContentPath) {
     if (this._status !== "uncrawled") {
-      throw new Error("クローリング済みの記事です");
+      throw new Error("クロール済みの記事です");
     }
 
     this._crawling = ArticleCrawling.createNew({ crawledContentPath });
     this._status = "crawled";
+  }
+
+  markAsConverted() {
+    if (this._status !== "crawled") {
+      throw new Error("未クロール、もしくは、変換済みの記事です。");
+    }
+
+    this._status = "converted";
   }
 }

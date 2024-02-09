@@ -20,7 +20,7 @@ describe("ArticleRepo", () => {
         blogFeedUrl: publickeyFeed.url,
         publishedAt: new Date("2020-01-01T00:00:00Z"),
       });
-      await articleRepo.bulkInsertOrSkip(prismaClient, [article1]);
+      await articleRepo.bulkInsert(prismaClient, [article1]);
 
       // test
       const article2 = Article.createNew({
@@ -29,7 +29,7 @@ describe("ArticleRepo", () => {
         blogFeedUrl: publickeyFeed.url,
         publishedAt: new Date("2020-01-02T00:00:00Z"),
       });
-      await articleRepo.bulkInsertOrSkip(prismaClient, [article2]);
+      await articleRepo.bulkInsert(prismaClient, [article2]);
 
       const articles = await prismaClient.article.findMany({ include: { articleSource: true } });
       expect(articles.length).toBe(2);
@@ -57,7 +57,7 @@ describe("ArticleRepo", () => {
           blogFeedUrl: publickeyFeed.url,
           publishedAt: new Date("2020-01-01T00:00:00Z"),
         });
-        await articleRepo.bulkInsertOrSkip(prismaClient, [article1]);
+        await articleRepo.bulkInsert(prismaClient, [article1]);
 
         const article2 = Article.reconstruct({
           url: "https://example.com/2",
@@ -66,7 +66,7 @@ describe("ArticleRepo", () => {
           status: "crawled",
           publishedAt: new Date("2020-01-02T00:00:00Z"),
         });
-        await articleRepo.bulkInsertOrSkip(prismaClient, [article2]);
+        await articleRepo.bulkInsert(prismaClient, [article2]);
 
         // test
         const articles = await articleRepo.findAll(prismaClient, {});
@@ -85,7 +85,7 @@ describe("ArticleRepo", () => {
           blogFeedUrl: publickeyFeed.url,
           publishedAt: new Date("2020-01-01T00:00:00Z"),
         });
-        await articleRepo.bulkInsertOrSkip(prismaClient, [article1]);
+        await articleRepo.bulkInsert(prismaClient, [article1]);
 
         const article2 = Article.reconstruct({
           url: "https://example.com/2",
@@ -94,7 +94,7 @@ describe("ArticleRepo", () => {
           status: "crawled",
           publishedAt: new Date("2020-01-02T00:00:00Z"),
         });
-        await articleRepo.bulkInsertOrSkip(prismaClient, [article2]);
+        await articleRepo.bulkInsert(prismaClient, [article2]);
 
         // test
         const articles = await articleRepo.findAll(prismaClient, {
@@ -122,7 +122,7 @@ describe("ArticleRepo", () => {
           blogFeedUrl: publickeyFeed.url,
           publishedAt: new Date("2020-01-01T00:00:00Z"),
         });
-        await articleRepo.bulkInsertOrSkip(prismaClient, [article]);
+        await articleRepo.bulkInsert(prismaClient, [article]);
 
         // test
         const path = CrawledContentPath.createNew("https://example.com/test");
