@@ -6,7 +6,7 @@ import "reflect-metadata";
 import { injectable } from "tsyringe";
 
 import { appConfig } from "../../appConfig";
-import ITextToSpeechApiClient from "../../domain/Episode/ITextToSpeechApiClient";
+import ITextToSpeechApiClient from "../../domain/EpisodeAudio/ITextToSpeechApiClient";
 
 export const AUDIO_FILES_BUCKET_NAME = "articles-audio-files";
 

@@ -21,6 +21,9 @@ export default class SsmlBuilder {
   build(blogFeedUrl: string, articleAndHtmlList: ArticleAndHtml[]) {
     let speechText = "<speak>\n最初の記事です。\n";
     let isFirst = true;
+    articleAndHtmlList.sort((a, b) => {
+      return a.article.publishedAt.getTime() - b.article.publishedAt.getTime();
+    });
     for (const articleAndHtml of articleAndHtmlList) {
       if (isFirst) {
         isFirst = false;

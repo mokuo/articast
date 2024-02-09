@@ -2,10 +2,10 @@ import "reflect-metadata";
 import { injectable } from "tsyringe";
 
 import Article from "../../domain/Article/Article";
-import SsmlBuilder, { ArticleAndHtml } from "../../domain/Episode/SsmlBuilder";
+import SsmlBuilder, { ArticleAndHtml } from "../../domain/EpisodeAudio/SsmlBuilder";
 import ArticleRepo from "../../infrastructure/Article/ArticleRepo";
 import ArticleStorage from "../../infrastructure/Article/ArticleStorage";
-import TextToSpeechApiClient from "../../infrastructure/Episode/TextToSpeechApiClient";
+import TextToSpeechApiClient from "../../infrastructure/EpisodeAudio/TextToSpeechApiClient";
 import { PrismaTxClient } from "../../prisma/utils";
 
 @injectable()

@@ -7,12 +7,6 @@ const ARTICLE_STATUS = ["uncrawled", "crawled", "converted"] as const;
 const ArticleStatusEnum = z.enum(ARTICLE_STATUS);
 export type ArticleStatus = z.infer<typeof ArticleStatusEnum>;
 
-const transitions: Record<ArticleStatus, ArticleStatus[]> = {
-  uncrawled: ["crawled"],
-  crawled: ["converted"],
-  converted: [],
-};
-
 export default class Article {
   readonly url: string;
   readonly title: string;
