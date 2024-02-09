@@ -11,20 +11,22 @@ datasource db {
 }
 
 model BlogFeed {
-  url            String          @id
-  title          String
-  articleSources ArticleSource[]
+  url                 String               @id
+  title               String
+  articleSources      ArticleSource[]
+  episodeAudioOrigins EpisodeAudioOrigin[]
 
   @@map("blog_feeds")
 }
 
 model Article {
-  url             String           @id
-  title           String
-  publishedAt     DateTime         @map("published_at")
-  status          String
-  articleSource   ArticleSource?
-  articleCrawling ArticleCrawling?
+  url                 String               @id
+  title               String
+  publishedAt         DateTime             @map("published_at")
+  status              String
+  articleSource       ArticleSource?
+  articleCrawling     ArticleCrawling?
+  episodeAudioArticle EpisodeAudioArticle?
 
   @@map("articles")
 }
@@ -46,4 +48,33 @@ model ArticleCrawling {
   crawledAt          DateTime @map("crawled_at")
 
   @@map("article_crawlings")
+}
+
+model EpisodeAudio {
+  id                   String                @id
+  audioFilePath        String                @map("audio_file_path")
+  generatedAt          DateTime              @map("generated_at")
+  status               String
+  episodeAudioOrigin   EpisodeAudioOrigin?
+  episodeAudioArticles EpisodeAudioArticle[]
+
+  @@map("episode_audios")
+}
+
+model EpisodeAudioOrigin {
+  episodeAudio   EpisodeAudio @relation(fields: [episodeAudioId], references: [id])
+  episodeAudioId String       @unique @map("episode_audio_id")
+  blogFeed       BlogFeed     @relation(fields: [blogFeedUrl], references: [url])
+  blogFeedUrl    String       @map("blog_feed_url")
+
+  @@map("episode_audio_origins")
+}
+
+model EpisodeAudioArticle {
+  episodeAudio   EpisodeAudio @relation(fields: [episodeAudioId], references: [id])
+  episodeAudioId String       @map("episode_audio_id")
+  article        Article      @relation(fields: [articleUrl], references: [url])
+  articleUrl     String       @unique @map("article_url")
+
+  @@map("episode_audio_articles")
 }

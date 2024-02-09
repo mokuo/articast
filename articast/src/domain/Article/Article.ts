@@ -7,12 +7,6 @@ const ARTICLE_STATUS = ["uncrawled", "crawled", "converted"] as const;
 const ArticleStatusEnum = z.enum(ARTICLE_STATUS);
 export type ArticleStatus = z.infer<typeof ArticleStatusEnum>;
 
-const transitions: Record<ArticleStatus, ArticleStatus[]> = {
-  uncrawled: ["crawled"],
-  crawled: ["converted"],
-  converted: [],
-};
-
 export default class Article {
   readonly url: string;
   readonly title: string;
@@ -97,20 +91,20 @@ export default class Article {
     });
   }
 
-  // updateStatus(nextStatus: ArticleStatus) {
-  //   if (transitions[this._status].includes(nextStatus)) {
-  //     this._status = nextStatus;
-  //   } else {
-  //     throw new Error(`status は ${this._status} => ${nextStatus} に変更できません。`);
-  //   }
-  // }
-
   saveCrawledContentPath(crawledContentPath: CrawledContentPath) {
     if (this._status !== "uncrawled") {
-      throw new Error("クローリング済みの記事です");
+      throw new Error("クロール済みの記事です");
     }
 
     this._crawling = ArticleCrawling.createNew({ crawledContentPath });
     this._status = "crawled";
+  }
+
+  markAsConverted() {
+    if (this._status !== "crawled") {
+      throw new Error("未クロール、もしくは、変換済みの記事です。");
+    }
+
+    this._status = "converted";
   }
 }
