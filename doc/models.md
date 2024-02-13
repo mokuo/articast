@@ -32,7 +32,7 @@ EpisodeAudio {
 }
 EpisodeAudioOrigin {
 	int episode_audio_id(R)
-	string blog_feed_id(R)
+	string blog_feed_url(R)
 }
 EpisodeAudioArticle {
 	int episode_audio_id(R)
@@ -56,6 +56,9 @@ PodcastFeedChannel {
 PodcastFeedItem {
 	string title
 	string enclosure
+	string guid
+	Date pubDate
+	string description
 }
 
 BlogFeed ||--o{ BlogFeedItem: "streams"

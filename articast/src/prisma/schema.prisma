@@ -78,3 +78,15 @@ model EpisodeAudioArticle {
 
   @@map("episode_audio_articles")
 }
+
+model PodcastFeedItem {
+  title           String
+  enclosureUrl    String   @map("enclosure_url")
+  enclosureLength Int      @map("enclosure_length")
+  enclosureType   String   @map("enclosure_type")
+  guid            String   @id
+  pubDate         DateTime @map("pub_date")
+  description     String   @db.Text
+
+  @@map("podcast_feed_items")
+}
