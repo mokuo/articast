@@ -1,4 +1,8 @@
+import { randomUUID } from "crypto";
+
 import { z } from "zod";
+
+import Article from "../Article/Article";
 
 type EnclosureType = "audio/mpeg"; // ref: https://docs.aws.amazon.com/ja_jp/polly/latest/dg/API_SynthesizeSpeech.html#API_SynthesizeSpeech_ResponseSyntax
 const AUDIO_MPEG: EnclosureType = "audio/mpeg";
@@ -39,26 +43,26 @@ export default class PodcastFeedItem {
   }
 
   static createNew({
-    title,
+    blogFeedTitle,
+    articles,
     enclosureUrl,
     enclosureLength,
-    guid,
-    description,
   }: {
-    title: string;
+    blogFeedTitle: string;
+    articles: Article[];
     enclosureUrl: string;
     enclosureLength: number;
-    guid: string;
-    description: string;
   }) {
+    const pubDate = new Date();
+
     return new PodcastFeedItem({
-      title,
+      title: `${blogFeedTitle} の記事まとめ ${pubDate.getFullYear()}-${pubDate.getMonth() + 1}-${pubDate.getDate()}`,
       enclosureUrl,
       enclosureLength,
       enclosureType: AUDIO_MPEG,
-      guid,
-      pubDate: new Date(),
-      description,
+      guid: randomUUID(),
+      pubDate,
+      description: this.buildDescription(articles),
     });
   }
 
@@ -88,5 +92,14 @@ export default class PodcastFeedItem {
       pubDate,
       description,
     });
+  }
+
+  private static buildDescription(articles: Article[]): string {
+    let description = `本エピソードには、以下の記事が含まれています。`;
+    for (const article of articles) {
+      description += `\n\n${article.title}\n`;
+      description += article.url;
+    }
+    return description;
   }
 }

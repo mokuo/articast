@@ -5,6 +5,7 @@ import Article, { ArticleStatus } from "./Article";
 export type FindAllParams = {
   blogFeedUrl?: string;
   status?: ArticleStatus;
+  articleUrls?: string[];
 };
 
 export default interface IArticleRepo {

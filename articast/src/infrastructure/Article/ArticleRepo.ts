@@ -33,14 +33,17 @@ export default class ArticleRepo implements IArticleRepo {
   }
 
   async findAll(prismaClient: PrismaTxClient, params: FindAllParams): Promise<Article[]> {
-    const { blogFeedUrl, status } = params;
+    const { blogFeedUrl, status, articleUrls } = params;
 
     const result = await prismaClient.article.findMany({
       where: {
         articleSource: {
-          blogFeedUrl: blogFeedUrl ?? undefined,
+          blogFeedUrl: blogFeedUrl,
         },
-        status: status ?? undefined,
+        status: status,
+        url: articleUrls && {
+          in: articleUrls,
+        },
       },
       include: {
         articleSource: true,

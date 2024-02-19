@@ -12,3 +12,9 @@ export const publickeyFeed = new BlogFeed({
   url: "https://www.publickey1.jp/atom.xml",
   title: "Publickey",
 });
+
+const blogFeeds = [publickeyFeed];
+
+export const getBlogFeed = (url: string) => {
+  return blogFeeds.find((blogFeed) => blogFeed.url === url);
+};
